@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <!-- Your existing head content -->
+
+    <!-- Add your existing website code here -->
+    <!-- ... -->
+</head>
+<body>
+    <!-- Your existing HTML content -->
+    
+    
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Gray - Resume</title>
+    <style>
+        header {
+            text-align: center;
+        }
+        body {
+  background-color: lightblue;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Christopher Gray</h1>
+        <p>132 Foxchase Drive, Glen Burnie MD, 21061 | 240-431-0974 | ChristopherMatthewGray2012@gmail.com</p>
+    </header>
+
+    <section id="experience">
+        <h2>EXPERIENCE 
+        <style>
+        h2 {
+            text-align: center;
+        }
+    </style></h2>
+       
+        <article>
+            <h3>Northrop Grumman | Material Data BI Analyst | 2019 – Current
+            <style>
+        h3 {
+            text-align: center;
+        }
+    </style>
+           </h3>
+            <h4>Baltimore, Maryland<br>
+                Leading Aerospace and Defense firm</h4>
+            
+            <i>Experienced Data Analyst proficient in SQL and Python, specializing in Azure Technologies. Skilled in
+                developing end-to-end data pipelines, leveraging Azure SQL Database, Data Factory, and Databricks. Expert
+                in creating insightful visualizations with Power BI to drive informed decision-making.</i>
+            <h4>Situation</h4>
+            <p>Cumbersome Excel limitations spark exploration for better solutions.</p>
+            <h4>Task</h4>
+            <p>Proactively expanded expertise beyond Excel and learned SQL and Python to incorporate Azure technologies,
+                seeking a more comprehensive solution as an alternative to cumbersome Excel files.</p>
+            <h4>Action</h4>
+            <p>Implemented ETL pipelines using Azure, orchestrated diverse data movement, and maintained ARM templates
+                for scalable resource provisioning. Automated data workflows with Azure Data Factory's Pipeline Expression
+                Language, organized structured data in Azure Data Lake, and utilized Azure Databricks for seamless
+                transformations. Loaded data into Synapse Serverless SQL Pools, connecting to PowerBI for continuous
+                analysis. Utilized Microsoft suite and database systems for streamlined ad-hoc request handling.</p>
+            <h4>Result</h4>
+            <p>Increase in operational efficiency through streamlined ETL processes, leading to faster data insights and
+                decision-making. Enhanced overall productivity, reduced manual efforts, and empowered the organization to
+                handle larger datasets efficiently. Additionally, improved collaboration and accessibility in the cloud
+                environment contributed to a more agile and data-driven business strategy, fostering innovation and
+                competitiveness.</p>
+        </article>
+
+        <article>
+            <h3>PNC Financial Services | Lead Loan Officer | 2015 – 2019<br>
+            Baltimore, Maryland<br>
+                Top 10 Financial Services provider by assets</br>
+                <style>
+        h4 {
+            text-align: center;
+        }
+    </style></h4>
+            <p>
+                <p>Implemented Lean Six Sigma methodologies to streamline and reduce the cycle time to Process a Loan
+                    Application by 30% (both Credit Card & Personal loans).</p>
+                <p>Utilized Data Driven tools to analyze client information to identify future financial needs.</p>
+                <p>Lead continuous improvement initiatives resulting in 15% reduction in loan documentation errors.</p>
+                <p>Applied Lean Six Sigma practices to improve customer experience in the loan application process,
+                    resulting in increased customer satisfaction.</p>
+            </ul>
+        </article>
+
+    </section>
+
+    <section id="education">
+        <h2>EDUCATION</h2>
+        <p>Bowie State University<br>
+            BS in Business Administration, with Concentration in Economics | 2012-2016</p>
+    </section>
+
+    <section id="certifications">
+        <h2>CERTIFICATIONS</h2>
+        <p>Microsoft Certified: Azure Data Fundamentals | Expires 9/2024<br>
+            Microsoft Certified: Azure Data Engineer Associate | Expires 10/2024</p>
+    </section>
+
+    <section id="skills">
+        <h2>SKILLS & ABILITIES</h2>
+        <p>Technical: SQL, Advanced Microsoft Excel, Python, PySpark, Azure, Tableau, PowerBI, SAP</p>
+    </section>
+
+</body>
+
+
+
+
+<!-- JavaScript code in your website to trigger the function for recording visits and fetch visit count -->
+<script>
+  // Function to record a visit
+  function recordVisit() {
+    fetch('https://chrisgrayresume.azurewebsites.net/api/HttpTrigger1?code=qF2wa6VuDJYypP-lRPCu_ywLbUoxceRIKJnPS3aqokOGAzFuQ2ELfQ==', {
+      method: 'POST',
+      // Additional options if needed
+    });
+  }
+
+  // Function to fetch and display visit count
+  function getVisitCount() {
+    fetch('https://chrisgrayresume.azurewebsites.net/api/HttpTrigger3?url=https://chrisgrayresume.z13.web.core.windows.net/&code=NeuI4Dbzc-P9T8Dxt7VsvU-LZhm61_-H0028c9r_qxCPAzFui_xLNw==')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.text();  // Use response.text() to get the raw response
+      })
+      .then(data => {
+        console.log('Raw response:', data);  // Log the raw response for inspection
+
+        // Extract the number after the last colon in the response
+        const numericValue = parseInt(data.split(':').pop(), 10);
+
+        // Display the numeric value
+        const visitCountHTML = `<div>Current Visitors: ${numericValue}</div>`;
+        document.getElementById('visitCount').innerHTML = visitCountHTML;
+      })
+      .catch(error => {
+        console.error('Error fetching or processing data:', error);
+      });
+  }
+
+  // Call the functions to record a visit and fetch visit count after the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    recordVisit();
+    getVisitCount();
+  });
+
+</script>
+
+<!-- HTML element to display the visit count -->
+<div id="visitCount"></div>
